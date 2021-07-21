@@ -1,0 +1,6 @@
+<p *ngIf="user">{{ user | json}}</p>
+<div class="cntr">
+    <ng-template ngFor let-evenement [ngForOf]="service.evenements | async" let-i="index">
+        <app-card [evenement]="evenement" (evenementEvent)="evenementEvent(evenement)"></app-card>
+    </ng-template>
+</div>

@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+:root {
+    --main-color-1: #fff;
+    --main-color-2: #000;
+    --main-color-3: #FF8C00; /*Dark Orange*/
+    --main-color-4: #FFFFF0; /*Ivory*/
+    --main-color-5: #006400; /*Dark Green*/
+    --main-color-6: #DCDCDC; /* Gainsboro*/
+}

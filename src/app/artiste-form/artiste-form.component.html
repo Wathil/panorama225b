@@ -1,0 +1,14 @@
+<p>artiste</p>
+
+<label for="name">Artiste: </label>
+<input id="name" type="text" [formControl]="name">
+
+<p>Value: {{ name.value }}</p>
+
+<button (click)="addArtiste()">Add Artiste</button>
+
+<ul>
+    <li class="text" *ngFor="let artiste of service.artistes | async">
+        {{artiste.artiste}}
+    </li>
+</ul>

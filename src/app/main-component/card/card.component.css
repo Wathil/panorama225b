@@ -1,0 +1,57 @@
+/* If the screen size is 600px wide or less, hide the element */
+.card {
+    border-radius: 5px;
+    border: 1px black solid;
+    width: 100%;
+    margin: 10px;
+    padding: 10 px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.entete {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    font-size: .8em;
+    display: block;
+    width: 115px;
+    height: 25px;
+    margin: 5px;
+    padding: 2px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: lighter;
+    line-height: 25px;
+}
+
+.b1 {
+    color: var(--main-color-1);
+    background: var(--main-color-3);
+}
+
+.b2 {
+    color: var(--main-color-2);
+    background: var(--main-color-4);
+    border: 1px var(--main-color-2) solid;
+}
+
+.b3 {
+    color: var(--main-color-1);
+    background: var(--main-color-5);
+    border: 1px var(--main-color-5) solid;
+}
+
+a {
+    text-decoration:none;
+ }
+
+.titre {
+    margin: 5px;
+    padding: 2px;
+}

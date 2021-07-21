@@ -1,0 +1,14 @@
+<p>Lieux</p>
+
+<label for="name">Lieu: </label>
+<input id="name" type="text" [formControl]="name">
+
+<p>Value: {{ name.value }}</p>
+
+<button (click)="addLieu()">Add Lieu</button>
+
+<ul>
+    <li class="text" *ngFor="let lieu of this.service.lieux | async">
+        {{lieu.lieu}}
+    </li>
+</ul>

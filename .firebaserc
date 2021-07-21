@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "panorama225a": {
+      "hosting": {
+        "panorama225": [
+          "panorama225a"
+        ]
+      }
+    }
+  }
+}

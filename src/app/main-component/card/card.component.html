@@ -1,0 +1,9 @@
+<div class="card" *ngIf="evenement">
+    <img [src]="imgUrl$ | async" />
+    <div class="entete">
+        <a href="#meaningful" class="button b1" role="button">{{evenement.artiste}}</a>
+        <a href="#meaningful" class="button b2" role="button">{{evenement.lieu}}</a>
+        <a href="#meaningful" class="button b3" role="button">{{service.doFormatFrenchDate(evenement)}}</a>
+    </div>
+    <p [innerHTML]="evenement.titre" class="titre"></p>
+</div>
