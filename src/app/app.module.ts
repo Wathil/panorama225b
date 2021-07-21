@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponentComponent } from './main-component/main-component.component';
-import { CardComponent } from './main-component/card/card.component';
+import { CardComponent } from './card/card.component';
 
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
@@ -16,6 +16,7 @@ import { MainFormComponent } from './main-form/main-form.component';
 import { LieuFormComponent } from './lieu-form/lieu-form.component';
 import { ArtisteFormComponent } from './artiste-form/artiste-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ArtisteComponentComponent } from './artiste-component/artiste-component.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NavigationComponent,
     MainFormComponent,
     LieuFormComponent,
-    ArtisteFormComponent
+    ArtisteFormComponent,
+    ArtisteComponentComponent
   ],
   imports: [
     BrowserModule,

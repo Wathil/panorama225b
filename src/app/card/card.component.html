@@ -1,0 +1,16 @@
+<div class="card" *ngIf="evenement">
+
+    <div *ngIf="evenement.annule; else elseBlock" class="container">
+        <img class="annule-image" [src]="imgUrl$ | async" />
+        <div class="annule-texte">Annulé</div>
+    </div>
+    <ng-template #elseBlock><img [src]="imgUrl$ | async" /></ng-template>
+
+    <div class="entete">
+        <a href="#meaningful" class="button b1" role="button">{{evenement.artiste}}</a>
+        <a href="#meaningful" class="button b2" role="button">{{evenement.lieu}}</a>
+        <!-- <a href="#meaningful" class="button b3" role="button">{{service.doFormatFrenchDate(evenement)}}</a> -->
+        <span class="s3">{{service.doFormatFrenchDate(evenement)}}</span>
+    </div>
+    <p [innerHTML]="evenement.titre" class="titre"></p>
+</div>

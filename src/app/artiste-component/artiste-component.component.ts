@@ -16,16 +16,17 @@ const getEvenementObservable = (collection: AngularFirestoreCollection<Evenement
 };
 
 @Component({
-  selector: 'app-main-component',
-  templateUrl: './main-component.component.html',
-  styleUrls: ['./main-component.component.css']
+  selector: 'app-artiste-component',
+  templateUrl: './artiste-component.component.html',
+  styleUrls: ['./artiste-component.component.css']
 })
-export class MainComponentComponent implements OnInit {
-
+export class ArtisteComponentComponent implements OnInit {
   // imageUrl$: Observable<string>;
 
+  public artiste: string = "Westador";
+
   public evenements = getEvenementObservable(
-    this.store.collection('evenements', ref => ref.orderBy('timestamp').startAt(this.service.timestamp))
+    this.store.collection('evenements', ref => ref.where('artiste', '==', this.artiste).orderBy('timestamp').startAt(this.service.timestamp))
   ) as Observable<Evenement[]>;
 
   user!: firebase.User;
