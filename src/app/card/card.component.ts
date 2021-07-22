@@ -17,6 +17,7 @@ import { MapPipe } from './map.pipe';
 export class CardComponent implements OnInit {
 
   public formatString(str: string, len: number): string {
+    if (str.length < len) return str;
     return str.substr(0, len).concat("…");
   }
 
