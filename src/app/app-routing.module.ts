@@ -11,7 +11,7 @@ import { MainFormComponent } from './main-form/main-form.component';
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'artiste', component: ArtisteFormComponent},
-  {path: 'artistes', component: ArtisteComponentComponent},
+  {path: 'artistes/:artiste', component: ArtisteComponentComponent},
   {path: 'lieu', component: LieuFormComponent},
   {path: 'form', component: MainFormComponent},
   {path: 'main', component: MainComponentComponent},

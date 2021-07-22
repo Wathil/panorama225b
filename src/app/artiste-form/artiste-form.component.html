@@ -1,9 +1,11 @@
-<p>artiste</p>
-
 <label for="name">Artiste: </label>
 <input id="name" type="text" [formControl]="name">
 
 <p>Value: {{ name.value }}</p>
+
+<p>
+    <input type="file" id="customFile" (change)="uploadFile($event)">
+</p>
 
 <button (click)="addArtiste()">Add Artiste</button>
 

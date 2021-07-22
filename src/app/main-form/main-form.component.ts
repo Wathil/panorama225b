@@ -39,12 +39,13 @@ export class MainFormComponent implements OnInit {
   }
 
   AddEvenement() {
+    console.log("this.day=" + this.day);
     var evenement = new Evenement();
     evenement.imageUrl = this.imageUrl.toString();
     evenement.titre = this.titre;
     evenement.artiste = this.artisteSelect;
     evenement.lieu = this.lieuSelect;
-    evenement.jour = this.day;
+    evenement.jour = +this.day;
     evenement.mois = this.month;
     evenement.annee = this.annee;
     evenement.annule = false;
@@ -61,7 +62,7 @@ export class MainFormComponent implements OnInit {
     var storageRef = firebase.storage().ref();
 
     // Create a reference to 'images/mountains.jpg'
-    var mountainImagesRef = storageRef.child('img/' + this.imageUrl.toString());
+    var mountainImagesRef = storageRef.child('img/evenement/' + this.imageUrl.toString());
 
     mountainImagesRef.put(selectedFiles[0]).then((snapshot) => {
       console.log('Uploaded a blob or file!');

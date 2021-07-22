@@ -17,6 +17,7 @@ import { LieuFormComponent } from './lieu-form/lieu-form.component';
 import { ArtisteFormComponent } from './artiste-form/artiste-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ArtisteComponentComponent } from './artiste-component/artiste-component.component';
+import { MapPipe } from './card/map.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ArtisteComponentComponent } from './artiste-component/artiste-component
     MainFormComponent,
     LieuFormComponent,
     ArtisteFormComponent,
-    ArtisteComponentComponent
+    ArtisteComponentComponent,
+    MapPipe
   ],
   imports: [
     BrowserModule,

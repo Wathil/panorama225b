@@ -8,14 +8,16 @@ const date: Date = new Date();
 })
 export class GeneralService {
 
+  public artiste! : string;
+
   private _timestamp!: number;
   public get timestamp(): number {
     return this._timestamp;
   }
 
   constructor() {
-    this._timestamp = (date.getDate() - 1) + 
-      (date.getMonth() * 32) + 
+    this._timestamp = (date.getDate() - 1) +
+      (date.getMonth() * 32) +
       (date.getFullYear() * 512);
   }
 

@@ -42,7 +42,20 @@ img {
     justify-content: space-between;
 }
 
-.button {
+button {
+    font-size: .8em;
+    display: block;
+    width: 115px;
+    height: 25px;
+    margin: 5px;
+    padding: 2px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: lighter;
+    line-height: 25px;
+}
+
+.mybutton {
     font-size: .8em;
     display: block;
     width: 115px;
@@ -106,7 +119,7 @@ span {
 
 a {
     text-decoration:none;
- }
+}
 
 .titre {
     margin: 5px;

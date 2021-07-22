@@ -1,9 +1,11 @@
-<p>Lieux</p>
-
 <label for="name">Lieu: </label>
 <input id="name" type="text" [formControl]="name">
 
 <p>Value: {{ name.value }}</p>
+
+<p>
+    <input type="file" id="customFile" (change)="uploadFile($event)">
+</p>
 
 <button (click)="addLieu()">Add Lieu</button>
 
