@@ -1,13 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Evenement } from 'src/app/evenement';
-
-import firebase from 'firebase';
-import { EvenementService } from '../evenement.service';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { ActivatedRoute } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { GeneralService } from '../general.service';
-import { ActivatedRoute, Router } from '@angular/router';
 import { AffichageService } from '../affichage.service';
+import { Evenement } from '../evenement';
+import { GeneralService } from '../general.service';
 
 const getEvenementObservable = (collection: AngularFirestoreCollection<Evenement>) => {
   const subject = new BehaviorSubject<Evenement[]>([]);
@@ -18,15 +15,14 @@ const getEvenementObservable = (collection: AngularFirestoreCollection<Evenement
 };
 
 @Component({
-  selector: 'app-artiste-component',
-  templateUrl: './artiste-component.component.html',
-  styleUrls: ['./artiste-component.component.css']
+  selector: 'app-lieu',
+  templateUrl: './lieu.component.html',
+  styleUrls: ['./lieu.component.css']
 })
-export class ArtisteComponentComponent implements OnInit {
-  // imageUrl$: Observable<string>;
+export class LieuComponent implements OnInit {
 
   public evenements = getEvenementObservable(
-    this.store.collection('evenements', ref => ref.where('artiste', '==', this.service.artiste).orderBy('timestamp').startAt(this.service.timestamp))
+    this.store.collection('evenements', ref => ref.where('lieu', '==', this.service.lieu).orderBy('timestamp').startAt(this.service.timestamp))
   ) as Observable<Evenement[]>;
 
   constructor(
@@ -37,7 +33,7 @@ export class ArtisteComponentComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.affichageService.affiche(this.route.snapshot.paramMap.get('artiste')!);
+    this.affichageService.affiche(this.route.snapshot.paramMap.get('lieu')!);
   }
 
 }

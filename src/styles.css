@@ -15,3 +15,15 @@ body {
     --main-color-5: #006400; /*Dark Green*/
     --main-color-6: #DCDCDC; /* Gainsboro*/
 }
+
+.cntr {
+  margin: auto;
+  width: 30%;
+}
+
+@media only screen and (max-width: 600px) {
+  .cntr {
+    margin: auto;
+    width: 90%;
+  }
+}

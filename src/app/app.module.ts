@@ -18,6 +18,7 @@ import { ArtisteFormComponent } from './artiste-form/artiste-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ArtisteComponentComponent } from './artiste-component/artiste-component.component';
 import { MapPipe } from './card/map.pipe';
+import { LieuComponent } from './lieu/lieu.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MapPipe } from './card/map.pipe';
     LieuFormComponent,
     ArtisteFormComponent,
     ArtisteComponentComponent,
-    MapPipe
+    MapPipe,
+    LieuComponent
   ],
   imports: [
     BrowserModule,

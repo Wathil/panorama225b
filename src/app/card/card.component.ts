@@ -52,4 +52,12 @@ export class CardComponent implements OnInit {
     }
   }
 
+  goToLieu(lieu : string | undefined) {
+    if (lieu) {
+      this.service.lieu = lieu;
+      //this.nav.label = artiste;
+      this.router.navigateByUrl('lieux/' + encodeURIComponent(lieu));
+    }
+  }
+
 }

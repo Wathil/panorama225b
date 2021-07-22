@@ -9,6 +9,7 @@ const date: Date = new Date();
 export class GeneralService {
 
   public artiste! : string;
+  public lieu!: string;
 
   private _timestamp!: number;
   public get timestamp(): number {

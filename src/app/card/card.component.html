@@ -9,8 +9,8 @@
     <div class="entete">
         <!-- <button class="mybutton b1" (click)="goToArtiste(evenement.artiste)">{{evenement.artiste!.substr(0,17)}}</button> -->
         <!-- <a role="button" class="mybutton b1" role="button" (click)="goToArtiste(evenement.artiste)">{{evenement.artiste!.substr(0,17)}}</a> -->
-        <a role="button" class="mybutton b1" role="button" (click)="goToArtiste(evenement.artiste)">{{ (evenement.artiste!) | map: formatString:'15' }}</a>
-        <a href="#meaningful" class="mybutton b2" role="button">{{evenement.lieu!.substr(0,17)}}</a>
+        <a class="mybutton b1" role="button" (click)="goToArtiste(evenement.artiste)">{{ evenement.artiste! | map: formatString:'15' }}</a>
+        <a class="mybutton b2" role="button" (click)="goToLieu(evenement.lieu)">{{ evenement.lieu! | map: formatString:'15' }}</a>
         <!-- <a href="#meaningful" class="button b3" role="button">{{service.doFormatFrenchDate(evenement)}}</a> -->
         <span class="s3">{{service.doFormatFrenchDate(evenement)}}</span>
     </div>
