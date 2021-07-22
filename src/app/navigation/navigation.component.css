@@ -19,7 +19,6 @@ a {
     padding: 5px;
     border-radius: 5px;
     font-weight: bolder;
-    line-height: 25px;
 }
 
 .b1 {
@@ -29,7 +28,6 @@ a {
 .b1:hover {
     color: var(--main-color-3);
     background: var(--main-color-1);
-    height: 25px;
 }
 
 .text {
@@ -37,5 +35,4 @@ a {
     margin: 5px;
     padding: 5px;
     font-weight: bolder;
-    line-height: 25px;
 }

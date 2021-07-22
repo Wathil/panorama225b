@@ -15,7 +15,7 @@ export class ArtisteFormComponent implements OnInit {
 
   constructor(public service: ArtisteService,
     public generalService: GeneralService) { }
-  
+
   ngOnInit(): void {
   }
 

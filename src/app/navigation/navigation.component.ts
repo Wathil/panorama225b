@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AffichageService } from '../affichage.service';
 
 @Component({
   selector: 'app-navigation',
@@ -9,7 +10,11 @@ export class NavigationComponent implements OnInit {
 
   label!: string;
 
-  constructor() { }
+  constructor(private affichageService: AffichageService) {
+    this.affichageService.affichage$.subscribe((data) => {
+      this.label = data;
+    });
+  }
 
   ngOnInit(): void {
   }

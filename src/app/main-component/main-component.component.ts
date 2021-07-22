@@ -6,6 +6,7 @@ import { EvenementService } from '../evenement.service';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { GeneralService } from '../general.service';
+import { AffichageService } from '../affichage.service';
 
 const getEvenementObservable = (collection: AngularFirestoreCollection<Evenement>) => {
   const subject = new BehaviorSubject<Evenement[]>([]);
@@ -31,7 +32,9 @@ export class MainComponentComponent implements OnInit {
   user!: firebase.User;
   randomNumber1: number = Date.now();
 
-  constructor(private store: AngularFirestore, private service: GeneralService) {
+  constructor(private store: AngularFirestore,
+    private service: GeneralService,
+    private affichageService: AffichageService) {
     //var httpsReference = storage.refFromURL('https://firebasestorage.googleapis.com/v0/b/panorama225a.appspot.com/o/img%2F1.jpg?alt=media&token=9d696ca8-19b6-448c-ac39-76b5a969fe1b');
     // var httpsReference = storage.refFromURL('gs://panorama225a.appspot.com/img/1.jpg');
     // this.imageUrl$ = httpsReference.getDownloadURL();
@@ -49,6 +52,8 @@ export class MainComponentComponent implements OnInit {
           // this.user.delete;
         }
       });
+
+      affichageService.affiche("Accueil");
   }
 
   ngOnInit(): void {
