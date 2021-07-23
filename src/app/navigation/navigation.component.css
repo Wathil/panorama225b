@@ -13,25 +13,21 @@ a {
     text-decoration:none;
 }
 
-.button {
-    height: 25px;
+.mybutton {
+    height: 20px;
     margin: 5px;
     padding: 5px;
     border-radius: 5px;
     font-weight: bolder;
 }
 
-.b1 {
-    color: var(--main-color-1);
-}
-
-.b1:hover {
+.mybutton:hover {
     color: var(--main-color-3);
     background: var(--main-color-1);
 }
 
 .text {
-    height: 25px;
+    height: 20px;
     margin: 5px;
     padding: 5px;
     font-weight: bolder;

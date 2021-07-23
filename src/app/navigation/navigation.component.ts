@@ -21,6 +21,12 @@ export class NavigationComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  isAccueil() : boolean {
+    if (this.label == 'Accueil')
+      return true;
+    return false;
+  }
+
   goToHome() {
     if (this.label != 'Accueil')
       this.router.navigateByUrl('main');

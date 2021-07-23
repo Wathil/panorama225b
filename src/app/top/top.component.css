@@ -1,0 +1,30 @@
+.top-button {
+  background: var(--main-color-3);
+  color: var(--main-color-1);
+  font-size: 1em;
+  height: 50px;
+  width: 50px;
+  margin: 5px;
+  padding: 2px;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: bolder;
+  line-height: 45px;
+  position: fixed;
+  bottom: 30px;
+  right: 15px;
+  opacity: 0;
+  transition: all .2s ease-in-out;
+}
+
+.top-button:hover {
+  background: var(--main-color-1);
+  color: var(--main-color-3);
+  height: 48px;
+  width: 48px;
+  border: 1px var(--main-color-3) solid;
+}
+
+.show-scroll {
+    opacity: 1;
+}

@@ -19,6 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ArtisteComponentComponent } from './artiste-component/artiste-component.component';
 import { MapPipe } from './card/map.pipe';
 import { LieuComponent } from './lieu/lieu.component';
+import { TopComponent } from './top/top.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { LieuComponent } from './lieu/lieu.component';
     ArtisteFormComponent,
     ArtisteComponentComponent,
     MapPipe,
-    LieuComponent
+    LieuComponent,
+    TopComponent
   ],
   imports: [
     BrowserModule,

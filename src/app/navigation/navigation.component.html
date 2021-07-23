@@ -1,6 +1,8 @@
 <div class="menu">
-    <div>
-        <a class="button b1" role="button" (click)="goToHome()">panorama<span style="color: var(--main-color-5)">225</span></a>
+    <div *ngIf="isAccueil(); else elseBlock">
+        <div class="text">panorama<span style="color: var(--main-color-5)">225</span></div>
     </div>
-    <div *ngIf="label" class="info">{{label}}</div>
+    <ng-template #elseBlock><a class="mybutton" role="button" (click)="goToHome()">panorama<span style="color: var(--main-color-5)">225</span></a></ng-template>
+
+    <div *ngIf="label" class="text">{{label}}</div>
 </div>

@@ -32,6 +32,10 @@ export class MainComponentComponent implements OnInit {
   user!: firebase.User;
   randomNumber1: number = Date.now();
 
+  showScroll: boolean = false;
+  showScrollHeight = 300;
+  hideScrollHeight = 30;
+
   constructor(private store: AngularFirestore,
     private service: GeneralService,
     private affichageService: AffichageService) {
