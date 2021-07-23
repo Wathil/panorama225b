@@ -41,8 +41,8 @@ export class Evenement {
     public timestamp?: number;
 
     private setTimestamp() {
-        if (this.jour && this.mois && this.annee) {
-            this.timestamp = (--this.jour) + (this.mois * 32) + (this.annee * 512);
+        if (this._jour && this._mois && this._annee) {
+            this.timestamp = (this._jour - 1) + (this._mois * 32) + (this._annee * 512);
         }
     }
 

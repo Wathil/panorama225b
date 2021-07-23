@@ -45,7 +45,7 @@ export class MainFormComponent implements OnInit {
     evenement.titre = this.titre;
     evenement.artiste = this.artisteSelect;
     evenement.lieu = this.lieuSelect;
-    evenement.jour = +this.day;
+    evenement.jour = this.day;
     evenement.mois = this.month;
     evenement.annee = this.annee;
     evenement.annule = false;
