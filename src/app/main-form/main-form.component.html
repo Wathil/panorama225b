@@ -8,7 +8,7 @@
         <label for="artisteSelect">Artiste: </label>
         <select [id]="artisteSelect" [(ngModel)]="artisteSelect">
             <option></option>
-            <option *ngFor="let artiste of artisteService.artistes | async" [value]="artiste.artiste">
+            <option *ngFor="let artiste of artisteService.artistes$ | async" [value]="artiste.artiste">
                 {{artiste.artiste}}</option>
         </select>
     </p>
@@ -17,7 +17,7 @@
         <label for="lieuSelect">Lieu: </label>
         <select [id]="lieuSelect" [(ngModel)]="lieuSelect">
             <option></option>
-            <option *ngFor="let lieu of lieuService.lieux | async" [value]="lieu.lieu">{{lieu.lieu}}</option>
+            <option *ngFor="let lieu of lieuService.lieux$ | async" [value]="lieu.lieu">{{lieu.lieu}}</option>
         </select>
     </p>
 

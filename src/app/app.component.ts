@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'panorama225';
+
+  // constructor(private connexionService: ConnexionService) {
+  // }
 }

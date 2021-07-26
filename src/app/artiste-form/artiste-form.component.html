@@ -10,7 +10,7 @@
 <button (click)="addArtiste()">Add Artiste</button>
 
 <ul>
-    <li class="text" *ngFor="let artiste of service.artistes | async">
+    <li class="text" *ngFor="let artiste of service.artistes$ | async">
         {{artiste.artiste}}
     </li>
 </ul>

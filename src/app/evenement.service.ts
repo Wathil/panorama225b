@@ -1,27 +1,13 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { Evenement } from './evenement';
-import { GeneralService } from './general.service';
-
-const getEvenementObservable = (collection: AngularFirestoreCollection<Evenement>) => {
-  const subject = new BehaviorSubject<Evenement[]>([]);
-  collection.valueChanges().subscribe((val: Evenement[]) => {
-    subject.next(val);
-  });
-  return subject;
-};
 
 @Injectable({
   providedIn: 'root'
 })
 export class EvenementService {
 
-  public evenements = getEvenementObservable(
-    this.store.collection('evenements', ref => ref.orderBy('timestamp').startAt(this.service.timestamp))
-  ) as Observable<Evenement[]>;
-
-  constructor(private store: AngularFirestore, private service: GeneralService) { }
+  constructor(private store: AngularFirestore) { }
 
   addEvenement(evenement: Evenement) {
     console.log("add evenement=" + JSON.stringify(evenement));

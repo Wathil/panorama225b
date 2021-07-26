@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Evenement } from 'src/app/evenement';
 
-import firebase from 'firebase';
-import { EvenementService } from '../evenement.service';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { GeneralService } from '../general.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { AffichageService } from '../affichage.service';
 
 const getEvenementObservable = (collection: AngularFirestoreCollection<Evenement>) => {
@@ -23,10 +21,9 @@ const getEvenementObservable = (collection: AngularFirestoreCollection<Evenement
   styleUrls: ['./artiste-component.component.css']
 })
 export class ArtisteComponentComponent implements OnInit {
-  // imageUrl$: Observable<string>;
 
   public evenements = getEvenementObservable(
-    this.store.collection('evenements', ref => ref.where('artiste', '==', this.service.artiste).orderBy('timestamp').startAt(this.service.timestamp))
+    this.store.collection('evenements', ref => ref.where('artiste', '==', this.service.artiste).orderBy('timestamp').startAt(this.service.timestamp).limit(10))
   ) as Observable<Evenement[]>;
 
   constructor(

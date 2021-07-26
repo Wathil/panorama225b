@@ -5,14 +5,15 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyB-7-94Zo3USVElJR-YOsG6f0T2uAHkqvM",
-    authDomain: "panorama225a.firebaseapp.com",
-    databaseURL: "https://panorama225a-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "panorama225a",
-    storageBucket: "panorama225a.appspot.com",
-    messagingSenderId: "996176729298",
-    appId: "1:996176729298:web:054d9da347b0d93836090b",
-    measurementId: "G-J9ML1HHNEC"
+    apiKey: "AIzaSyBjTdv7Ap8nD3K9AjH_lQc5EWGkpWWbrfM",
+    authDomain: "panorama225-9aa61.firebaseapp.com",
+    projectId: "panorama225-9aa61",
+    storageBucket: "panorama225-9aa61.appspot.com",
+    messagingSenderId: "1062556422904",
+    appId: "1:1062556422904:web:9262f4fcc125d010efe10d",
+    measurementId: "G-RNLL01QMX2"
+
+    //,databaseURL: "https://panorama225a-default-rtdb.europe-west1.firebasedatabase.app"
   }
 };
 

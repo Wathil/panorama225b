@@ -10,7 +10,7 @@
 <button (click)="addLieu()">Add Lieu</button>
 
 <ul>
-    <li class="text" *ngFor="let lieu of this.service.lieux | async">
+    <li class="text" *ngFor="let lieu of this.service.lieux$ | async">
         {{lieu.lieu}}
     </li>
 </ul>

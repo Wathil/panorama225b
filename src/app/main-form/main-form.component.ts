@@ -39,7 +39,6 @@ export class MainFormComponent implements OnInit {
   }
 
   AddEvenement() {
-    console.log("this.day=" + this.day);
     var evenement = new Evenement();
     evenement.imageUrl = this.imageUrl.toString();
     evenement.titre = this.titre;

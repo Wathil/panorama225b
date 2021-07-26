@@ -20,7 +20,7 @@ export class LieuFormComponent implements OnInit {
   }
 
   name = new FormControl('');
-  
+
   addLieu() {
     this.service.addLieu({ lieu: this.name.value, imgUrl: this.imageUrl.toString() });
   }

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +21,8 @@ import { MapPipe } from './card/map.pipe';
 import { LieuComponent } from './lieu/lieu.component';
 import { TopComponent } from './top/top.component';
 
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,9 +44,21 @@ import { TopComponent } from './top/top.component';
     FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
+    //AngularFirestoreModule.enablePersistence(), // Does it work?
     AngularFireAuthModule
   ],
-  providers: [],
+  providers: [
+// {
+//   provide: APP_INITIALIZER,
+//   useFactory: initConnexionService,
+//   deps: [ConnexionService],
+//   multi: true
+// }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+// export function initConnexionService(connexionService: ConnexionService) {
+//   return () => connexionService.init();
+// }

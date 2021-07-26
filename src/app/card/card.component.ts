@@ -33,11 +33,9 @@ export class CardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    var url = 'gs://panorama225a.appspot.com/img/evenement/' + this.evenement?.imageUrl;
+    var url = 'gs://panorama225-9aa61.appspot.com/img/evenement/' + this.evenement?.imageUrl;
     var httpsReference = this.storage.refFromURL(url);
     this.imgUrl$ = httpsReference.getDownloadURL();
-    //this.evenement?.doFormatFrenchDate();
-    console.log("this.service.doFormatFrenchDate(evenement)=" + this.service.doFormatFrenchDate(this.evenement!));
   }
 
   // emitEvenement() {

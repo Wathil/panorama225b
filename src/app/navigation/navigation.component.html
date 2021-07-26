@@ -1,8 +1,29 @@
 <div class="menu">
+  <div class="menu2">
     <div *ngIf="isAccueil(); else elseBlock">
-        <div class="text">panorama<span style="color: var(--main-color-5)">225</span></div>
+      <div class="text">panorama<span style="color: var(--main-color-5)">225</span></div>
     </div>
-    <ng-template #elseBlock><a class="mybutton" role="button" (click)="goToHome()">panorama<span style="color: var(--main-color-5)">225</span></a></ng-template>
+    <ng-template #elseBlock><a class="mybutton" role="button" (click)="goToHome()">panorama<span
+          style="color: var(--main-color-5)">225</span></a></ng-template>
+
+    <div *ngIf="this.label == 'Accueil'" class="menu3">
+      <label for="artisteSelect">Artiste:</label>
+      <select [formControl]="artisteSelect" (change)="goToArtiste()">
+        <option></option>
+        <option *ngFor="let artisteNav of artistesNav" [value]="artisteNav.artiste">{{artisteNav.artiste}} |
+          {{artisteNav.total}}</option>
+      </select>
+    </div>
+
+    <div *ngIf="this.label == 'Accueil'" class="menu3">
+      <label for="lieuSelect">Lieu:</label>
+      <select [formControl]="lieuSelect" (change)="goToLieu()">
+        <option value=""></option>
+        <option *ngFor="let lieuNav of lieuxNav" [value]="lieuNav.lieu">{{lieuNav.lieu}} | {{lieuNav.total}}
+        </option>
+      </select>
+    </div>
 
     <div *ngIf="label" class="text">{{label}}</div>
+  </div>
 </div>

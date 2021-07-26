@@ -11,18 +11,21 @@ const getLieuObservable = (collection: AngularFirestoreCollection<Lieu>) => {
   return subject;
 };
 
+const LIEU_COLLECTION = 'lieux';
+
 @Injectable({
   providedIn: 'root'
 })
 export class LieuService {
 
-  public lieux = getLieuObservable(this.store.collection('lieux', ref => ref.orderBy('lieu'))) as Observable<Lieu[]>;
+  public lieux$ = getLieuObservable(this.store.collection(LIEU_COLLECTION, ref => ref.orderBy('lieu'))) as Observable<Lieu[]>;
 
   constructor(private store: AngularFirestore) { }
 
   addLieu(lieu: Lieu) {
-    console.log("add lieu=" + lieu.lieu);
-    this.store.collection('lieux').add(lieu);
+    this.store.collection(LIEU_COLLECTION).add({ lieu: lieu.lieu, imgUrl: lieu.imgUrl })
+      .then((docRef) => { console.log("Document written with ID: ", docRef.id); })
+      .catch(error => { console.error("Error adding document: ", error); });
   }
 
 }

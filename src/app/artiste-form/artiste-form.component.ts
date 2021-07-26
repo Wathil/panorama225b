@@ -19,10 +19,9 @@ export class ArtisteFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  name = new FormControl();
+  name = new FormControl('');
 
   addArtiste() {
-    console.log("add artiste=" + this.name.value);
     this.service.addArtiste({ artiste: this.name.value, imgUrl: this.imageUrl.toString() });
   }
 

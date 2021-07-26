@@ -11,20 +11,22 @@ const getArtisteObservable = (collection: AngularFirestoreCollection<Artiste>) =
   return subject;
 };
 
+const ARTISTE_COLLECTION = 'artistes';
+
 @Injectable({
   providedIn: 'root'
 })
 export class ArtisteService {
 
-  public artistes = getArtisteObservable(
-    //this.store.collection('artistes')
-    this.store.collection('artistes', ref => ref.orderBy('artiste'))
-    ) as Observable<Artiste[]>;
+  public artistes$ = getArtisteObservable(
+    this.store.collection(ARTISTE_COLLECTION, ref => ref.orderBy('artiste'))
+  ) as Observable<Artiste[]>;
 
   constructor(private store: AngularFirestore) { }
 
   addArtiste(artiste: Artiste) {
-    console.log("add artiste=" + artiste.artiste);
-    this.store.collection('artistes').add(artiste);
+    this.store.collection(ARTISTE_COLLECTION).add({ artiste: artiste.artiste, imgUrl: artiste.imgUrl })
+      .then((docRef) => { console.log("Document written with ID: ", docRef.id); })
+      .catch((error) => { console.error("Error adding document: ", error); });
   }
 }

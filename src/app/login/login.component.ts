@@ -1,5 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-import {AuthService} from './auth.service';
+import { Component, OnInit } from '@angular/core';
 
 import firebase from 'firebase';
 import { Router } from '@angular/router';
@@ -11,26 +10,43 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(
+    private router: Router) {
   }
 
   ngOnInit(): void {
   }
 
   onSignIn() {
-    this.authService.GoogleAuth().then((result) => {
-      console.log(result);
-      if (result.user?.uid !== 'jSXbxCbdBfRpwfx7iEik5izr3Hz1') {
-        this.onSignOut();
-      }
-      this.router.navigate(['']);
+    var provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth()
+    .signInWithPopup(provider)
+    .then((result) => {
+      /** @type {firebase.auth.OAuthCredential} */
+      var credential = result.credential;
+
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      var token = credential;
+      // The signed-in user info.
+      var user = result.user;
+      // ...
+    }).catch((error) => {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // The email of the user's account used.
+      var errorMessage = error.email;
+      // The firebase.auth.AuthCredential type that was used.
+      var credential = error.credential;
+      // ...
+      console.error(errorCode + errorMessage + errorMessage + credential);
     });
   }
 
   onSignOut() {
     firebase.auth().signOut().then(() => {
       console.log("sign out");
-      this.router.navigate(['']);
+      //this.router.navigate(['']);
     }).catch((error) => {
       console.log(error);
     });
