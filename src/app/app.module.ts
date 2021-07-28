@@ -23,6 +23,8 @@ import { TopComponent } from './top/top.component';
 
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
+import { AdsenseModule } from 'ng2-adsense';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +47,11 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     //AngularFirestoreModule.enablePersistence(), // Does it work?
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AdsenseModule.forRoot({
+      adClient: 'ca-pub-2737506190590879',
+      adSlot: 8546594619
+      }),
   ],
   providers: [
 // {

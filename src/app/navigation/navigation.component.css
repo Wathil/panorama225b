@@ -23,14 +23,21 @@
 }
 
 a {
-    text-decoration:none;
+    text-decoration: none;
 }
 
 .mybutton {
-  height: 25px;
+  height: 18px;
+  padding: 7px 5px 5px 5px;
   margin: 5px 0 0 0;
-  padding: 2px;
   border-radius: 5px;
+  font-weight: bolder;
+}
+
+.textButton {
+  height: 25px;
+  margin: 0 0 0 0;
+  padding: 12px 0 0 10px;
   font-weight: bolder;
 }
 
@@ -40,8 +47,7 @@ a {
 }
 
 .text {
-  height: 30px;
-  margin: 10px 10px 0 0;
-  padding: 0;
+  height: 25px;
+  padding: 12px 10px 0 0;
   font-weight: bolder;
 }

@@ -1,7 +1,7 @@
 <div class="menu">
   <div class="menu2">
     <div *ngIf="isAccueil(); else elseBlock">
-      <div class="text">panorama<span style="color: var(--main-color-5)">225</span></div>
+      <div class="textButton">panorama<span style="color: var(--main-color-5)">225</span></div>
     </div>
     <ng-template #elseBlock><a class="mybutton" role="button" (click)="goToHome()">panorama<span
           style="color: var(--main-color-5)">225</span></a></ng-template>

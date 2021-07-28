@@ -10,7 +10,8 @@ const getEvenementObservable = (collection: AngularFirestoreCollection<Evenement
   const subject = new BehaviorSubject<Evenement[]>([]);
   collection.valueChanges().subscribe((val: Evenement[]) => {
     subject.next(val);
-  });
+  },
+  error => console.error("error lieu-component.ts=" + JSON.stringify(error)));
   return subject;
 };
 

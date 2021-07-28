@@ -17,8 +17,7 @@ const routes: Routes = [
   {path: 'lieu', component: LieuFormComponent, canActivate: [AngularFireAuthGuard]},
   {path: 'lieux/:lieu', component: LieuComponent},
   {path: 'form', component: MainFormComponent, canActivate: [AngularFireAuthGuard]},
-  {path: 'main', component: MainComponentComponent},
-  {path: '', redirectTo: '/main', pathMatch: 'full'},
+  {path: '', component: MainComponentComponent},
   {path: '**', component: AppComponent}
 ];
 

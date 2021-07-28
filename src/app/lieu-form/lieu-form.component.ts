@@ -22,23 +22,7 @@ export class LieuFormComponent implements OnInit {
   name = new FormControl('');
 
   addLieu() {
-    this.service.addLieu({ lieu: this.name.value, imgUrl: this.imageUrl.toString() });
+    this.service.addLieu({ lieu: this.name.value });
   }
 
-  uploadFile(event: any) {
-
-    this.imageUrl = this.generalService.getTimeStamp();
-
-    var selectedFiles = event.target.files;
-
-    // Create a root reference
-    var storageRef = firebase.storage().ref();
-
-    // Create a reference to 'images/mountains.jpg'
-    var mountainImagesRef = storageRef.child('img/lieu/' + this.imageUrl.toString());
-
-    mountainImagesRef.put(selectedFiles[0]).then((snapshot) => {
-      console.log('Uploaded a blob or file!');
-    });
-  }
 }

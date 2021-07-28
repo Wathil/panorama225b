@@ -11,7 +11,8 @@ const getEvenementObservable = (collection: AngularFirestoreCollection<Evenement
   const subject = new BehaviorSubject<Evenement[]>([]);
   collection.valueChanges().subscribe((val: Evenement[]) => {
     subject.next(val);
-  });
+  },
+  error => console.error("error artiste-component.ts=" + JSON.stringify(error)));
   return subject;
 };
 
@@ -23,7 +24,7 @@ const getEvenementObservable = (collection: AngularFirestoreCollection<Evenement
 export class ArtisteComponentComponent implements OnInit {
 
   public evenements = getEvenementObservable(
-    this.store.collection('evenements', ref => ref.where('artiste', '==', this.service.artiste).orderBy('timestamp').startAt(this.service.timestamp).limit(10))
+    this.store.collection('evenements', ref => ref.where('artiste', '==', this.service.artiste).orderBy('timestamp').startAt(this.service.timestamp).limit(10)) //
   ) as Observable<Evenement[]>;
 
   constructor(

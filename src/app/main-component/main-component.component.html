@@ -1,5 +1,5 @@
 <div class="cntr">
-  <ng-template ngFor let-evenement [ngForOf]="evenements | async" let-i="index">
+  <ng-template ngFor let-evenement [ngForOf]="this.evenementService.evenements">
     <app-card [evenement]="evenement" (evenementEvent)="evenementEvent(evenement)"></app-card>
   </ng-template>
 </div>

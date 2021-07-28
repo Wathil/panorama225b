@@ -33,6 +33,8 @@ export class NavigationComponent implements OnInit {
     private affichageService: AffichageService,
     private router: Router) {
 
+      console.log("constructor navigation.component");
+
     this.affichageService.affichage$.subscribe((data) => {
       this.label = data;
     });
@@ -41,7 +43,7 @@ export class NavigationComponent implements OnInit {
       lieux.forEach(async lieu => {
         if (lieu.lieu) {
           var lieuString: string = lieu.lieu;
-          var lieux2 = (this.store.collection('evenements', ref => ref.where('lieu', '==', lieuString).orderBy('timestamp').startAt(this.service.timestamp))) as AngularFirestoreCollection<Evenement>;
+          var lieux2 = (this.store.collection('evenements', ref => ref.where('lieu', '==', lieuString).orderBy('timestamp').startAt(this.service.timestamp).limit(10))) as AngularFirestoreCollection<Evenement>;
           let snapshot = await lieux2.get();
           var count: number = 0;
           await snapshot.forEach(async next => {
@@ -49,7 +51,7 @@ export class NavigationComponent implements OnInit {
               ++count;
             })
           });
-          this.lieuxNav.push({ lieu: lieuString, total: count });
+          if (count > 0) this.lieuxNav.push({ lieu: lieuString, total: count });
         }
       });
     });
@@ -58,7 +60,7 @@ export class NavigationComponent implements OnInit {
       artistes.forEach(async artiste => {
         if (artiste.artiste) {
           var artisteString: string = artiste.artiste;
-          var artistes2 = (this.store.collection('evenements', ref => ref.where('artiste', '==', artisteString).orderBy('timestamp').startAt(this.service.timestamp))) as AngularFirestoreCollection<Evenement>;
+          var artistes2 = (this.store.collection('evenements', ref => ref.where('artiste', '==', artisteString).orderBy('timestamp').startAt(this.service.timestamp).limit(10))) as AngularFirestoreCollection<Evenement>;
           let snapshot = await artistes2.get();
           var count: number = 0;
           await snapshot.forEach(async next => {
@@ -66,7 +68,7 @@ export class NavigationComponent implements OnInit {
               ++count;
             })
           });
-          this.artistesNav.push({ artiste: artisteString, total: count });
+          if (count > 0) this.artistesNav.push({ artiste: artisteString, total: count });
         }
       });
     });
@@ -100,7 +102,7 @@ export class NavigationComponent implements OnInit {
     if (this.label != 'Accueil') {
       this.artisteSelect.reset();
       this.lieuSelect.reset();
-      this.router.navigateByUrl('main');
+      this.router.navigateByUrl('');
     }
   }
 

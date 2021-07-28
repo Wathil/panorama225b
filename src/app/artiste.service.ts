@@ -7,11 +7,13 @@ const getArtisteObservable = (collection: AngularFirestoreCollection<Artiste>) =
   const subject = new BehaviorSubject<Artiste[]>([]);
   collection.valueChanges().subscribe((val: Artiste[]) => {
     subject.next(val);
-  });
+  },
+  error => console.error("error artiste-service.ts=" + JSON.stringify(error)));
   return subject;
 };
 
 const ARTISTE_COLLECTION = 'artistes';
+const MAX_ARTISTES = 100;
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +21,7 @@ const ARTISTE_COLLECTION = 'artistes';
 export class ArtisteService {
 
   public artistes$ = getArtisteObservable(
-    this.store.collection(ARTISTE_COLLECTION, ref => ref.orderBy('artiste'))
+    this.store.collection(ARTISTE_COLLECTION, ref => ref.orderBy('artiste').limit(MAX_ARTISTES))
   ) as Observable<Artiste[]>;
 
   constructor(private store: AngularFirestore) { }
